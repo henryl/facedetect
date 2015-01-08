@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC447F181A5D07FF001CB23E /* dSFMT.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EC61A5D07FF001CB23E /* dSFMT.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F191A5D07FF001CB23E /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ECB1A5D07FF001CB23E /* kiss_fft.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F1A1A5D07FF001CB23E /* kiss_fftnd.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ECD1A5D07FF001CB23E /* kiss_fftnd.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F1B1A5D07FF001CB23E /* kiss_fftndr.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ECF1A5D07FF001CB23E /* kiss_fftndr.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F1C1A5D07FF001CB23E /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ED11A5D07FF001CB23E /* kiss_fftr.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F1D1A5D07FF001CB23E /* kissf_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ED31A5D07FF001CB23E /* kissf_fft.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F1E1A5D07FF001CB23E /* kissf_fftnd.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ED51A5D07FF001CB23E /* kissf_fftnd.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F1F1A5D07FF001CB23E /* kissf_fftndr.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ED71A5D07FF001CB23E /* kissf_fftndr.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F201A5D07FF001CB23E /* kissf_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447ED91A5D07FF001CB23E /* kissf_fftr.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F211A5D07FF001CB23E /* SFMT.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EE11A5D07FF001CB23E /* SFMT.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F221A5D07FF001CB23E /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EE41A5D07FF001CB23E /* sha1.c */; settings = {COMPILER_FLAGS = "-O3 -ffast-math"; }; };
+		AC447F231A5D07FF001CB23E /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EE71A5D07FF001CB23E /* sqlite3.c */; settings = {COMPILER_FLAGS = "-O3"; }; };
+		AC447F241A5D07FF001CB23E /* ccv_algebra.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EE91A5D07FF001CB23E /* ccv_algebra.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F251A5D07FF001CB23E /* ccv_basic.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EEA1A5D07FF001CB23E /* ccv_basic.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F261A5D07FF001CB23E /* ccv_bbf.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EEB1A5D07FF001CB23E /* ccv_bbf.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F271A5D07FF001CB23E /* ccv_cache.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EEC1A5D07FF001CB23E /* ccv_cache.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F281A5D07FF001CB23E /* ccv_classic.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EED1A5D07FF001CB23E /* ccv_classic.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F291A5D07FF001CB23E /* ccv_convnet.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EEE1A5D07FF001CB23E /* ccv_convnet.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F2A1A5D07FF001CB23E /* ccv_daisy.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EEF1A5D07FF001CB23E /* ccv_daisy.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F2B1A5D07FF001CB23E /* ccv_dpm.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF11A5D07FF001CB23E /* ccv_dpm.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F2C1A5D07FF001CB23E /* ccv_ferns.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF21A5D07FF001CB23E /* ccv_ferns.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F2D1A5D07FF001CB23E /* ccv_icf.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF31A5D07FF001CB23E /* ccv_icf.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F2E1A5D07FF001CB23E /* ccv_image_processing.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF41A5D07FF001CB23E /* ccv_image_processing.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F2F1A5D07FF001CB23E /* ccv_io.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF61A5D07FF001CB23E /* ccv_io.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F301A5D07FF001CB23E /* ccv_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF71A5D07FF001CB23E /* ccv_memory.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F311A5D07FF001CB23E /* ccv_mser.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF81A5D07FF001CB23E /* ccv_mser.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F321A5D07FF001CB23E /* ccv_numeric.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EF91A5D07FF001CB23E /* ccv_numeric.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F331A5D07FF001CB23E /* ccv_output.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EFA1A5D07FF001CB23E /* ccv_output.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F341A5D07FF001CB23E /* ccv_resample.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EFB1A5D07FF001CB23E /* ccv_resample.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F351A5D07FF001CB23E /* ccv_scd.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EFC1A5D07FF001CB23E /* ccv_scd.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F361A5D07FF001CB23E /* ccv_sift.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EFD1A5D07FF001CB23E /* ccv_sift.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F371A5D07FF001CB23E /* ccv_sparse_coding.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EFE1A5D07FF001CB23E /* ccv_sparse_coding.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F381A5D07FF001CB23E /* ccv_swt.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447EFF1A5D07FF001CB23E /* ccv_swt.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F391A5D07FF001CB23E /* ccv_tld.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447F001A5D07FF001CB23E /* ccv_tld.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F3A1A5D07FF001CB23E /* ccv_transform.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447F011A5D07FF001CB23E /* ccv_transform.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+		AC447F3B1A5D07FF001CB23E /* ccv_util.c in Sources */ = {isa = PBXBuildFile; fileRef = AC447F021A5D07FF001CB23E /* ccv_util.c */; settings = {COMPILER_FLAGS = "-O3 -mfpu=neon -ffast-math -D HAVE_ACCELERATE_FRAMEWORK -D USE_DISPATCH -D HAVE_NEON"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AC447EA51A5D0794001CB23E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AC447EA71A5D0794001CB23E /* libccv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libccv.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC447EC31A5D07FF001CB23E /* dSFMT-common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "dSFMT-common.h"; sourceTree = "<group>"; };
+		AC447EC41A5D07FF001CB23E /* dSFMT-params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "dSFMT-params.h"; sourceTree = "<group>"; };
+		AC447EC51A5D07FF001CB23E /* dSFMT-params19937.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "dSFMT-params19937.h"; sourceTree = "<group>"; };
+		AC447EC61A5D07FF001CB23E /* dSFMT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dSFMT.c; sourceTree = "<group>"; };
+		AC447EC71A5D07FF001CB23E /* dSFMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dSFMT.h; sourceTree = "<group>"; };
+		AC447EC91A5D07FF001CB23E /* _kiss_fft_guts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _kiss_fft_guts.h; sourceTree = "<group>"; };
+		AC447ECA1A5D07FF001CB23E /* _kissf_fft_guts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _kissf_fft_guts.h; sourceTree = "<group>"; };
+		AC447ECB1A5D07FF001CB23E /* kiss_fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fft.c; sourceTree = "<group>"; };
+		AC447ECC1A5D07FF001CB23E /* kiss_fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fft.h; sourceTree = "<group>"; };
+		AC447ECD1A5D07FF001CB23E /* kiss_fftnd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fftnd.c; sourceTree = "<group>"; };
+		AC447ECE1A5D07FF001CB23E /* kiss_fftnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fftnd.h; sourceTree = "<group>"; };
+		AC447ECF1A5D07FF001CB23E /* kiss_fftndr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fftndr.c; sourceTree = "<group>"; };
+		AC447ED01A5D07FF001CB23E /* kiss_fftndr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fftndr.h; sourceTree = "<group>"; };
+		AC447ED11A5D07FF001CB23E /* kiss_fftr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fftr.c; sourceTree = "<group>"; };
+		AC447ED21A5D07FF001CB23E /* kiss_fftr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fftr.h; sourceTree = "<group>"; };
+		AC447ED31A5D07FF001CB23E /* kissf_fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kissf_fft.c; sourceTree = "<group>"; };
+		AC447ED41A5D07FF001CB23E /* kissf_fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kissf_fft.h; sourceTree = "<group>"; };
+		AC447ED51A5D07FF001CB23E /* kissf_fftnd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kissf_fftnd.c; sourceTree = "<group>"; };
+		AC447ED61A5D07FF001CB23E /* kissf_fftnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kissf_fftnd.h; sourceTree = "<group>"; };
+		AC447ED71A5D07FF001CB23E /* kissf_fftndr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kissf_fftndr.c; sourceTree = "<group>"; };
+		AC447ED81A5D07FF001CB23E /* kissf_fftndr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kissf_fftndr.h; sourceTree = "<group>"; };
+		AC447ED91A5D07FF001CB23E /* kissf_fftr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kissf_fftr.c; sourceTree = "<group>"; };
+		AC447EDA1A5D07FF001CB23E /* kissf_fftr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kissf_fftr.h; sourceTree = "<group>"; };
+		AC447EDC1A5D07FF001CB23E /* SFMT-alti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFMT-alti.h"; sourceTree = "<group>"; };
+		AC447EDD1A5D07FF001CB23E /* SFMT-common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFMT-common.h"; sourceTree = "<group>"; };
+		AC447EDE1A5D07FF001CB23E /* SFMT-params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFMT-params.h"; sourceTree = "<group>"; };
+		AC447EDF1A5D07FF001CB23E /* SFMT-params19937.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFMT-params19937.h"; sourceTree = "<group>"; };
+		AC447EE01A5D07FF001CB23E /* SFMT-sse2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFMT-sse2.h"; sourceTree = "<group>"; };
+		AC447EE11A5D07FF001CB23E /* SFMT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SFMT.c; sourceTree = "<group>"; };
+		AC447EE21A5D07FF001CB23E /* SFMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMT.h; sourceTree = "<group>"; };
+		AC447EE41A5D07FF001CB23E /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		AC447EE51A5D07FF001CB23E /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		AC447EE71A5D07FF001CB23E /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		AC447EE81A5D07FF001CB23E /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		AC447EE91A5D07FF001CB23E /* ccv_algebra.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_algebra.c; sourceTree = "<group>"; };
+		AC447EEA1A5D07FF001CB23E /* ccv_basic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_basic.c; sourceTree = "<group>"; };
+		AC447EEB1A5D07FF001CB23E /* ccv_bbf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_bbf.c; sourceTree = "<group>"; };
+		AC447EEC1A5D07FF001CB23E /* ccv_cache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_cache.c; sourceTree = "<group>"; };
+		AC447EED1A5D07FF001CB23E /* ccv_classic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_classic.c; sourceTree = "<group>"; };
+		AC447EEE1A5D07FF001CB23E /* ccv_convnet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_convnet.c; sourceTree = "<group>"; };
+		AC447EEF1A5D07FF001CB23E /* ccv_daisy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_daisy.c; sourceTree = "<group>"; };
+		AC447EF01A5D07FF001CB23E /* ccv_doxygen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccv_doxygen.h; sourceTree = "<group>"; };
+		AC447EF11A5D07FF001CB23E /* ccv_dpm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_dpm.c; sourceTree = "<group>"; };
+		AC447EF21A5D07FF001CB23E /* ccv_ferns.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_ferns.c; sourceTree = "<group>"; };
+		AC447EF31A5D07FF001CB23E /* ccv_icf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_icf.c; sourceTree = "<group>"; };
+		AC447EF41A5D07FF001CB23E /* ccv_image_processing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_image_processing.c; sourceTree = "<group>"; };
+		AC447EF51A5D07FF001CB23E /* ccv_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccv_internal.h; sourceTree = "<group>"; };
+		AC447EF61A5D07FF001CB23E /* ccv_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_io.c; sourceTree = "<group>"; };
+		AC447EF71A5D07FF001CB23E /* ccv_memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_memory.c; sourceTree = "<group>"; };
+		AC447EF81A5D07FF001CB23E /* ccv_mser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_mser.c; sourceTree = "<group>"; };
+		AC447EF91A5D07FF001CB23E /* ccv_numeric.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_numeric.c; sourceTree = "<group>"; };
+		AC447EFA1A5D07FF001CB23E /* ccv_output.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_output.c; sourceTree = "<group>"; };
+		AC447EFB1A5D07FF001CB23E /* ccv_resample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_resample.c; sourceTree = "<group>"; };
+		AC447EFC1A5D07FF001CB23E /* ccv_scd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_scd.c; sourceTree = "<group>"; };
+		AC447EFD1A5D07FF001CB23E /* ccv_sift.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_sift.c; sourceTree = "<group>"; };
+		AC447EFE1A5D07FF001CB23E /* ccv_sparse_coding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_sparse_coding.c; sourceTree = "<group>"; };
+		AC447EFF1A5D07FF001CB23E /* ccv_swt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_swt.c; sourceTree = "<group>"; };
+		AC447F001A5D07FF001CB23E /* ccv_tld.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_tld.c; sourceTree = "<group>"; };
+		AC447F011A5D07FF001CB23E /* ccv_transform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_transform.c; sourceTree = "<group>"; };
+		AC447F021A5D07FF001CB23E /* ccv_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ccv_util.c; sourceTree = "<group>"; };
+		AC447F031A5D07FF001CB23E /* ccv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccv.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC447EA41A5D0794001CB23E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC447E9E1A5D0794001CB23E = {
+			isa = PBXGroup;
+			children = (
+				AC447EA91A5D0794001CB23E /* ccv */,
+				AC447EA81A5D0794001CB23E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC447EA81A5D0794001CB23E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EA71A5D0794001CB23E /* libccv.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC447EA91A5D0794001CB23E /* ccv */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EC11A5D07FF001CB23E /* 3rdparty */,
+				AC447EE91A5D07FF001CB23E /* ccv_algebra.c */,
+				AC447EEA1A5D07FF001CB23E /* ccv_basic.c */,
+				AC447EEB1A5D07FF001CB23E /* ccv_bbf.c */,
+				AC447EEC1A5D07FF001CB23E /* ccv_cache.c */,
+				AC447EED1A5D07FF001CB23E /* ccv_classic.c */,
+				AC447EEE1A5D07FF001CB23E /* ccv_convnet.c */,
+				AC447EEF1A5D07FF001CB23E /* ccv_daisy.c */,
+				AC447EF01A5D07FF001CB23E /* ccv_doxygen.h */,
+				AC447EF11A5D07FF001CB23E /* ccv_dpm.c */,
+				AC447EF21A5D07FF001CB23E /* ccv_ferns.c */,
+				AC447EF31A5D07FF001CB23E /* ccv_icf.c */,
+				AC447EF41A5D07FF001CB23E /* ccv_image_processing.c */,
+				AC447EF51A5D07FF001CB23E /* ccv_internal.h */,
+				AC447EF61A5D07FF001CB23E /* ccv_io.c */,
+				AC447EF71A5D07FF001CB23E /* ccv_memory.c */,
+				AC447EF81A5D07FF001CB23E /* ccv_mser.c */,
+				AC447EF91A5D07FF001CB23E /* ccv_numeric.c */,
+				AC447EFA1A5D07FF001CB23E /* ccv_output.c */,
+				AC447EFB1A5D07FF001CB23E /* ccv_resample.c */,
+				AC447EFC1A5D07FF001CB23E /* ccv_scd.c */,
+				AC447EFD1A5D07FF001CB23E /* ccv_sift.c */,
+				AC447EFE1A5D07FF001CB23E /* ccv_sparse_coding.c */,
+				AC447EFF1A5D07FF001CB23E /* ccv_swt.c */,
+				AC447F001A5D07FF001CB23E /* ccv_tld.c */,
+				AC447F011A5D07FF001CB23E /* ccv_transform.c */,
+				AC447F021A5D07FF001CB23E /* ccv_util.c */,
+				AC447F031A5D07FF001CB23E /* ccv.h */,
+			);
+			path = ccv;
+			sourceTree = "<group>";
+		};
+		AC447EC11A5D07FF001CB23E /* 3rdparty */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EC21A5D07FF001CB23E /* dsfmt */,
+				AC447EC81A5D07FF001CB23E /* kissfft */,
+				AC447EDB1A5D07FF001CB23E /* sfmt */,
+				AC447EE31A5D07FF001CB23E /* sha1 */,
+				AC447EE61A5D07FF001CB23E /* sqlite3 */,
+			);
+			path = 3rdparty;
+			sourceTree = "<group>";
+		};
+		AC447EC21A5D07FF001CB23E /* dsfmt */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EC31A5D07FF001CB23E /* dSFMT-common.h */,
+				AC447EC41A5D07FF001CB23E /* dSFMT-params.h */,
+				AC447EC51A5D07FF001CB23E /* dSFMT-params19937.h */,
+				AC447EC61A5D07FF001CB23E /* dSFMT.c */,
+				AC447EC71A5D07FF001CB23E /* dSFMT.h */,
+			);
+			path = dsfmt;
+			sourceTree = "<group>";
+		};
+		AC447EC81A5D07FF001CB23E /* kissfft */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EC91A5D07FF001CB23E /* _kiss_fft_guts.h */,
+				AC447ECA1A5D07FF001CB23E /* _kissf_fft_guts.h */,
+				AC447ECB1A5D07FF001CB23E /* kiss_fft.c */,
+				AC447ECC1A5D07FF001CB23E /* kiss_fft.h */,
+				AC447ECD1A5D07FF001CB23E /* kiss_fftnd.c */,
+				AC447ECE1A5D07FF001CB23E /* kiss_fftnd.h */,
+				AC447ECF1A5D07FF001CB23E /* kiss_fftndr.c */,
+				AC447ED01A5D07FF001CB23E /* kiss_fftndr.h */,
+				AC447ED11A5D07FF001CB23E /* kiss_fftr.c */,
+				AC447ED21A5D07FF001CB23E /* kiss_fftr.h */,
+				AC447ED31A5D07FF001CB23E /* kissf_fft.c */,
+				AC447ED41A5D07FF001CB23E /* kissf_fft.h */,
+				AC447ED51A5D07FF001CB23E /* kissf_fftnd.c */,
+				AC447ED61A5D07FF001CB23E /* kissf_fftnd.h */,
+				AC447ED71A5D07FF001CB23E /* kissf_fftndr.c */,
+				AC447ED81A5D07FF001CB23E /* kissf_fftndr.h */,
+				AC447ED91A5D07FF001CB23E /* kissf_fftr.c */,
+				AC447EDA1A5D07FF001CB23E /* kissf_fftr.h */,
+			);
+			path = kissfft;
+			sourceTree = "<group>";
+		};
+		AC447EDB1A5D07FF001CB23E /* sfmt */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EDC1A5D07FF001CB23E /* SFMT-alti.h */,
+				AC447EDD1A5D07FF001CB23E /* SFMT-common.h */,
+				AC447EDE1A5D07FF001CB23E /* SFMT-params.h */,
+				AC447EDF1A5D07FF001CB23E /* SFMT-params19937.h */,
+				AC447EE01A5D07FF001CB23E /* SFMT-sse2.h */,
+				AC447EE11A5D07FF001CB23E /* SFMT.c */,
+				AC447EE21A5D07FF001CB23E /* SFMT.h */,
+			);
+			path = sfmt;
+			sourceTree = "<group>";
+		};
+		AC447EE31A5D07FF001CB23E /* sha1 */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EE41A5D07FF001CB23E /* sha1.c */,
+				AC447EE51A5D07FF001CB23E /* sha1.h */,
+			);
+			path = sha1;
+			sourceTree = "<group>";
+		};
+		AC447EE61A5D07FF001CB23E /* sqlite3 */ = {
+			isa = PBXGroup;
+			children = (
+				AC447EE71A5D07FF001CB23E /* sqlite3.c */,
+				AC447EE81A5D07FF001CB23E /* sqlite3.h */,
+			);
+			path = sqlite3;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC447EA61A5D0794001CB23E /* ccv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC447EBB1A5D0794001CB23E /* Build configuration list for PBXNativeTarget "ccv" */;
+			buildPhases = (
+				AC447EA31A5D0794001CB23E /* Sources */,
+				AC447EA41A5D0794001CB23E /* Frameworks */,
+				AC447EA51A5D0794001CB23E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ccv;
+			productName = ccv;
+			productReference = AC447EA71A5D0794001CB23E /* libccv.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC447E9F1A5D0794001CB23E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Hanyang Liu";
+				TargetAttributes = {
+					AC447EA61A5D0794001CB23E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = AC447EA21A5D0794001CB23E /* Build configuration list for PBXProject "ccv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AC447E9E1A5D0794001CB23E;
+			productRefGroup = AC447EA81A5D0794001CB23E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC447EA61A5D0794001CB23E /* ccv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC447EA31A5D0794001CB23E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC447F371A5D07FF001CB23E /* ccv_sparse_coding.c in Sources */,
+				AC447F291A5D07FF001CB23E /* ccv_convnet.c in Sources */,
+				AC447F1A1A5D07FF001CB23E /* kiss_fftnd.c in Sources */,
+				AC447F361A5D07FF001CB23E /* ccv_sift.c in Sources */,
+				AC447F2B1A5D07FF001CB23E /* ccv_dpm.c in Sources */,
+				AC447F1E1A5D07FF001CB23E /* kissf_fftnd.c in Sources */,
+				AC447F1F1A5D07FF001CB23E /* kissf_fftndr.c in Sources */,
+				AC447F241A5D07FF001CB23E /* ccv_algebra.c in Sources */,
+				AC447F1C1A5D07FF001CB23E /* kiss_fftr.c in Sources */,
+				AC447F341A5D07FF001CB23E /* ccv_resample.c in Sources */,
+				AC447F311A5D07FF001CB23E /* ccv_mser.c in Sources */,
+				AC447F391A5D07FF001CB23E /* ccv_tld.c in Sources */,
+				AC447F251A5D07FF001CB23E /* ccv_basic.c in Sources */,
+				AC447F261A5D07FF001CB23E /* ccv_bbf.c in Sources */,
+				AC447F191A5D07FF001CB23E /* kiss_fft.c in Sources */,
+				AC447F281A5D07FF001CB23E /* ccv_classic.c in Sources */,
+				AC447F301A5D07FF001CB23E /* ccv_memory.c in Sources */,
+				AC447F2E1A5D07FF001CB23E /* ccv_image_processing.c in Sources */,
+				AC447F321A5D07FF001CB23E /* ccv_numeric.c in Sources */,
+				AC447F2A1A5D07FF001CB23E /* ccv_daisy.c in Sources */,
+				AC447F211A5D07FF001CB23E /* SFMT.c in Sources */,
+				AC447F2C1A5D07FF001CB23E /* ccv_ferns.c in Sources */,
+				AC447F221A5D07FF001CB23E /* sha1.c in Sources */,
+				AC447F231A5D07FF001CB23E /* sqlite3.c in Sources */,
+				AC447F271A5D07FF001CB23E /* ccv_cache.c in Sources */,
+				AC447F331A5D07FF001CB23E /* ccv_output.c in Sources */,
+				AC447F2D1A5D07FF001CB23E /* ccv_icf.c in Sources */,
+				AC447F201A5D07FF001CB23E /* kissf_fftr.c in Sources */,
+				AC447F2F1A5D07FF001CB23E /* ccv_io.c in Sources */,
+				AC447F181A5D07FF001CB23E /* dSFMT.c in Sources */,
+				AC447F351A5D07FF001CB23E /* ccv_scd.c in Sources */,
+				AC447F3A1A5D07FF001CB23E /* ccv_transform.c in Sources */,
+				AC447F3B1A5D07FF001CB23E /* ccv_util.c in Sources */,
+				AC447F381A5D07FF001CB23E /* ccv_swt.c in Sources */,
+				AC447F1B1A5D07FF001CB23E /* kiss_fftndr.c in Sources */,
+				AC447F1D1A5D07FF001CB23E /* kissf_fft.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AC447EB91A5D0794001CB23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC447EBA1A5D0794001CB23E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC447EBC1A5D0794001CB23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = armv7;
+			};
+			name = Debug;
+		};
+		AC447EBD1A5D0794001CB23E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = armv7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC447EA21A5D0794001CB23E /* Build configuration list for PBXProject "ccv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC447EB91A5D0794001CB23E /* Debug */,
+				AC447EBA1A5D0794001CB23E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC447EBB1A5D0794001CB23E /* Build configuration list for PBXNativeTarget "ccv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC447EBC1A5D0794001CB23E /* Debug */,
+				AC447EBD1A5D0794001CB23E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC447E9F1A5D0794001CB23E /* Project object */;
+}
