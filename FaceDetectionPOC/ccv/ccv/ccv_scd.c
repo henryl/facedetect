@@ -15,8 +15,8 @@
 #include "3rdparty/sqlite3/sqlite3.h"
 
 const ccv_scd_param_t ccv_scd_default_params = {
-	.interval = 5,
-	.min_neighbors = 1,
+	.interval = 6,
+	.min_neighbors = 0,
 	.step_through = 4,
 	.size = {
 		.width = 48,
@@ -189,6 +189,63 @@ static inline void _ccv_scd_run_feature_at_sse2(float* at, int cols, ccv_scd_stu
 	u0 = _mm_set1_ps(1.0 / (sqrtf(ux.f[0] + ux.f[1] + ux.f[2] + ux.f[3]) + 1e-6));
 	for (i = 0; i < 8; i++)
 		surf[i] = _mm_mul_ps(surf[i], u0);
+}
+#elif defined(HAVE_NEON)
+static inline void _ccv_scd_run_feature_at_neon(float* at, int cols, ccv_scd_stump_feature_t* feature, float32x4_t surf[8])
+{
+    int i;
+    for (i = 0; i < 4; i++)
+    {
+        float32x4_t d0 = vld1q_f32(at + (cols * feature->sy[i] + feature->sx[i]) * 8);
+        float32x4_t d1 = vld1q_f32(at + 4 + (cols * feature->sy[i] + feature->sx[i]) * 8);
+        float32x4_t du0 = vld1q_f32(at + (cols * feature->dy[i] + feature->sx[i]) * 8);
+        float32x4_t du1 = vld1q_f32(at + 4 + (cols * feature->dy[i] + feature->sx[i]) * 8);
+        float32x4_t dv0 = vld1q_f32(at + (cols * feature->sy[i] + feature->dx[i]) * 8);
+        float32x4_t dv1 = vld1q_f32(at + 4 + (cols * feature->sy[i] + feature->dx[i]) * 8);
+        float32x4_t duv0 = vld1q_f32(at + (cols * feature->dy[i] + feature->dx[i]) * 8);
+        float32x4_t duv1 = vld1q_f32(at + 4 + (cols * feature->dy[i] + feature->dx[i]) * 8);
+        surf[i * 2] = vsubq_f32(vaddq_f32(duv0, d0), vaddq_f32(du0, dv0));
+        surf[i * 2 + 1] = vsubq_f32(vaddq_f32(duv1, d1), vaddq_f32(du1, dv1));
+    }
+    
+    
+    // L2Hys normalization
+    float32x4_t v0 = vaddq_f32(vmulq_f32(surf[0], surf[0]), vmulq_f32(surf[1], surf[1]));
+    float32x4_t v1 = vaddq_f32(vmulq_f32(surf[2], surf[2]), vmulq_f32(surf[3], surf[3]));
+    float32x4_t v2 = vaddq_f32(vmulq_f32(surf[4], surf[4]), vmulq_f32(surf[5], surf[5]));
+    float32x4_t v3 = vaddq_f32(vmulq_f32(surf[6], surf[6]), vmulq_f32(surf[7], surf[7]));
+    v0 = vaddq_f32(v0, v1);
+    v2 = vaddq_f32(v2, v3);
+    union {
+        float f[4];
+        float32x4_t p;
+    } vx;
+    vx.p = vaddq_f32(v0, v2);
+    v0 = vmovq_n_f32(1.0 / (sqrtf(vx.f[0] + vx.f[1] + vx.f[2] + vx.f[3]) + 1e-6));
+    static float thlf = -2.0 / 5.65685424949; // -sqrtf(32)
+    static float thuf = 2.0 / 5.65685424949; // sqrtf(32)
+    const float32x4_t thl = vmovq_n_f32(thlf);
+    const float32x4_t thu = vmovq_n_f32(thuf);
+    for (i = 0; i < 8; i++)
+    {
+        surf[i] = vmulq_f32(surf[i], v0);
+        surf[i] = vminq_f32(surf[i], thu);
+        surf[i] = vmaxq_f32(surf[i], thl);
+    }
+    float32x4_t u0 = vaddq_f32(vmulq_f32(surf[0], surf[0]), vmulq_f32(surf[1], surf[1]));
+    float32x4_t u1 = vaddq_f32(vmulq_f32(surf[2], surf[2]), vmulq_f32(surf[3], surf[3]));
+    float32x4_t u2 = vaddq_f32(vmulq_f32(surf[4], surf[4]), vmulq_f32(surf[5], surf[5]));
+    float32x4_t u3 = vaddq_f32(vmulq_f32(surf[6], surf[6]), vmulq_f32(surf[7], surf[7]));
+    u0 = vaddq_f32(u0, u1);
+    u2 = vaddq_f32(u2, u3);
+    union {
+        float f[4];
+        float32x4_t p;
+    } ux;
+    ux.p = vaddq_f32(u0, u2);
+    u0 = vmovq_n_f32(1.0 / (sqrtf(ux.f[0] + ux.f[1] + ux.f[2] + ux.f[3]) + 1e-6));
+    for (i = 0; i < 8; i++)
+        surf[i] = vmulq_f32(surf[i], u0);
 }
 #else
 static inline void _ccv_scd_run_feature_at(float* at, int cols, ccv_scd_stump_feature_t* feature, float surf[32])
@@ -404,6 +461,8 @@ static void _ccv_scd_precompute_feature_vectors(const ccv_array_t* features, con
 			// save to fv
 #if defined(HAVE_SSE2)
 			_ccv_scd_run_feature_at_sse2(sat->data.f32, sat->cols, feature, (__m128*)_ccv_scd_get_surf_at(fv, j, i, positives->rnum, negatives->rnum));
+#elif defined(HAVE_NEON)
+            _ccv_scd_run_feature_at_neon(sat->data.f32, sat->cols, feature, (float32x4_t*)_ccv_scd_get_surf_at(fv, j, i, positives->rnum, negatives->rnum));
 #else
 			_ccv_scd_run_feature_at(sat->data.f32, sat->cols, feature, _ccv_scd_get_surf_at(fv, j, i, positives->rnum, negatives->rnum));
 #endif
@@ -427,6 +486,8 @@ static void _ccv_scd_precompute_feature_vectors(const ccv_array_t* features, con
 			// save to fv
 #if defined(HAVE_SSE2)
 			_ccv_scd_run_feature_at_sse2(sat->data.f32, sat->cols, feature, (__m128*)_ccv_scd_get_surf_at(fv, j, i + positives->rnum, positives->rnum, negatives->rnum));
+#elif defined(HAVE_NEON)
+            _ccv_scd_run_feature_at_neon(sat->data.f32, sat->cols, feature, (float32x4_t*)_ccv_scd_get_surf_at(fv, j, i + positives->rnum, positives->rnum, negatives->rnum));
 #else
 			_ccv_scd_run_feature_at(sat->data.f32, sat->cols, feature, _ccv_scd_get_surf_at(fv, j, i + positives->rnum, positives->rnum, negatives->rnum));
 #endif
@@ -678,6 +739,8 @@ static int _ccv_scd_classifier_cascade_pass(ccv_scd_classifier_cascade_t* cascad
 {
 #if defined(HAVE_SSE2)
 	__m128 surf[8];
+#elif defined(HAVE_NEON)
+    float32x4_t surf[8];
 #else
 	float surf[32];
 #endif
@@ -709,6 +772,20 @@ static int _ccv_scd_classifier_cascade_pass(ccv_scd_classifier_cascade_t* cascad
 			} ux;
 			ux.p = _mm_add_ps(u0, u2);
 			float u = expf(feature->bias + ux.f[0] + ux.f[1] + ux.f[2] + ux.f[3]);
+#elif defined(HAVE_NEON)
+            _ccv_scd_run_feature_at_neon(sat->data.f32, sat->cols, feature, surf);
+            float32x4_t u0 = vaddq_f32(vmulq_f32(surf[0], vld1q_f32(feature->w)), vmulq_f32(surf[1], vld1q_f32(feature->w + 4)));
+            float32x4_t u1 = vaddq_f32(vmulq_f32(surf[2], vld1q_f32(feature->w + 8)), vmulq_f32(surf[3], vld1q_f32(feature->w + 12)));
+            float32x4_t u2 = vaddq_f32(vmulq_f32(surf[4], vld1q_f32(feature->w + 16)), vmulq_f32(surf[5], vld1q_f32(feature->w + 20)));
+            float32x4_t u3 = vaddq_f32(vmulq_f32(surf[6], vld1q_f32(feature->w + 24)), vmulq_f32(surf[7], vld1q_f32(feature->w + 28)));
+            u0 = vaddq_f32(u0, u1);
+            u2 = vaddq_f32(u2, u3);
+            union {
+                float f[4];
+                float32x4_t p;
+            } ux;
+            ux.p = vaddq_f32(u0, u2);
+            float u = expf(feature->bias + ux.f[0] + ux.f[1] + ux.f[2] + ux.f[3]);
 #else
 			_ccv_scd_run_feature_at(sat->data.f32, sat->cols, feature, surf);
 			float u = feature->bias;
@@ -1368,6 +1445,8 @@ ccv_array_t* ccv_scd_detect_objects(ccv_dense_matrix_t* a, ccv_scd_classifier_ca
     
 #if defined(HAVE_SSE2)
 	__m128 surf[8];
+#elif defined(HAVE_NEON)
+    float32x4_t surf[8];
 #else
 	float surf[32];
 #endif
@@ -1441,6 +1520,20 @@ ccv_array_t* ccv_scd_detect_objects(ccv_dense_matrix_t* a, ccv_scd_classifier_ca
 								} ux;
 								ux.p = _mm_add_ps(u0, u2);
 								float u = expf(feature->bias + ux.f[0] + ux.f[1] + ux.f[2] + ux.f[3]);
+#elif defined(HAVE_NEON)
+                                _ccv_scd_run_feature_at_neon(ptr + x * 8, sat->cols, feature, surf);
+                                float32x4_t u0 = vaddq_f32(vmulq_f32(surf[0], vld1q_f32(feature->w)), vmulq_f32(surf[1], vld1q_f32(feature->w + 4)));
+                                float32x4_t u1 = vaddq_f32(vmulq_f32(surf[2], vld1q_f32(feature->w + 8)), vmulq_f32(surf[3], vld1q_f32(feature->w + 12)));
+                                float32x4_t u2 = vaddq_f32(vmulq_f32(surf[4], vld1q_f32(feature->w + 16)), vmulq_f32(surf[5], vld1q_f32(feature->w + 20)));
+                                float32x4_t u3 = vaddq_f32(vmulq_f32(surf[6], vld1q_f32(feature->w + 24)), vmulq_f32(surf[7], vld1q_f32(feature->w + 28)));
+                                u0 = vaddq_f32(u0, u1);
+                                u2 = vaddq_f32(u2, u3);
+                                union {
+                                    float f[4];
+                                    float32x4_t p;
+                                } ux;
+                                ux.p = vaddq_f32(u0, u2);
+                                float u = expf(feature->bias + ux.f[0] + ux.f[1] + ux.f[2] + ux.f[3]);
 #else
 								_ccv_scd_run_feature_at(ptr + x * 8, sat->cols, feature, surf);
 								float u = feature->bias;

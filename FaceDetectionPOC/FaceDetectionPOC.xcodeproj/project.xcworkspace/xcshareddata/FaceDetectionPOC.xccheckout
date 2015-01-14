@@ -6,43 +6,35 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F95ED917-247C-44A7-A7A4-7FBB761D7632</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FaceDetectionPOC</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9DFAAC99C3E295B25E39B803756D69A260C86E3D</key>
-		<string>github.com:liuliu/ccv.git</string>
-		<key>B12CB695F75CF4DA740FEBE3D822DA26D0B1545E</key>
-		<string>github.com:liuliu/klaus.git</string>
+		<key>987623D27CAB4FBA1ADDAE1A8EE64F8B707CE902</key>
+		<string>github.com:henryl/facedetect.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FaceDetectionPOC/FaceDetectionPOC.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9DFAAC99C3E295B25E39B803756D69A260C86E3D</key>
-		<string>ccv/</string>
-		<key>B12CB695F75CF4DA740FEBE3D822DA26D0B1545E</key>
-		<string>klaus/</string>
+		<key>987623D27CAB4FBA1ADDAE1A8EE64F8B707CE902</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:liuliu/ccv.git</string>
+	<string>github.com:henryl/facedetect.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9DFAAC99C3E295B25E39B803756D69A260C86E3D</string>
+	<string>987623D27CAB4FBA1ADDAE1A8EE64F8B707CE902</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9DFAAC99C3E295B25E39B803756D69A260C86E3D</string>
+			<string>987623D27CAB4FBA1ADDAE1A8EE64F8B707CE902</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ccv</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B12CB695F75CF4DA740FEBE3D822DA26D0B1545E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>klaus</string>
+			<string>FaceDetectionPOC</string>
 		</dict>
 	</array>
 </dict>

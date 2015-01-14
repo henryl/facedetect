@@ -10,7 +10,7 @@
 #import "ORKConcreteFace.h"
 #import "ccv.h"
 
-#define SCALE 0.75
+#define SCALE 1.0
 
 static inline CGImageRef getCGImageRotated(CGImageRef originalCGImage, double radians)
 {
@@ -89,7 +89,7 @@ static inline ccv_dense_matrix_t *get_ccv_dense_matrix_t(CGImageRef image)
     {
         self.videoCamera = videoCamera;
         
-        NSString *dbPath = [[NSBundle mainBundle ] pathForResource: @"face" ofType: @"sqlite3"];
+        NSString *dbPath = [[NSBundle mainBundle ] pathForResource: @"face-1000" ofType: @"sqlite3"];
         
         detector = ccv_scd_classifier_cascade_read([dbPath UTF8String]);
     }
@@ -108,43 +108,42 @@ static inline ccv_dense_matrix_t *get_ccv_dense_matrix_t(CGImageRef image)
     return newImage;
 }
 
-
-
 - (void)processFacesFromSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
-    static BOOL isProcessing = NO;
+    static int processing = 0;
     
-    if(isProcessing) {
+    if(processing > 0) {
         return;
     }
     
-    isProcessing = YES;
+    processing++;
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    //    CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
-    CIImage *convertedImage = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer options:nil];
-    
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    CGImageRef cgImage = getCGImageRotated([context createCGImage:convertedImage fromRect:convertedImage.extent], M_PI_2);
-    
+    CVPixelBufferRetain(pixelBuffer);
 
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
     
+        //    CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+        CIImage *convertedImage = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer options:nil];
+        
+        CIContext *context = [CIContext contextWithOptions:nil];
+        
+        CGImageRef cgImage = getCGImageRotated([context createCGImage:convertedImage fromRect:convertedImage.extent], M_PI_2);
 //        ccv_dense_matrix_t *ccvImg = 0;
 //        int width = CVPixelBufferGetWidth(pixelBuffer);
 //        int height = CVPixelBufferGetHeight(pixelBuffer);
 //        unsigned char *data = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
 //        ccv_read(data, &ccvImg, CCV_IO_RGBA_RAW | CCV_IO_GRAY, height, width, width * 4);
-//        
+
+    // 4 fps w/ neon
         ccv_dense_matrix_t *ccvImg = get_ccv_dense_matrix_t(cgImage);
         
         ccv_scd_param_t scd_params = {
-            .interval = 2,
+            .interval = 4,
             .min_neighbors = 3,
-            .step_through = (int)(4 * SCALE),
+            .step_through = 4,
             .size = {
-                .width = (int)(44 * SCALE),
-                .height = (int)(44 * SCALE),
+                .width = 44,
+                .height = 44,
             },
         };
         
@@ -163,7 +162,7 @@ static inline ccv_dense_matrix_t *get_ccv_dense_matrix_t(CGImageRef image)
             ccv_comp_t* comp = (ccv_comp_t*)ccv_array_get(seq, i);
             ORKConcreteFace *orkface = [ORKConcreteFace new];
 //            orkface.boundingBox = CGRectMake((CGFloat)(comp->rect.height - comp->rect.y), (CGFloat)(comp->rect.x), (CGFloat)comp->rect.height, (CGFloat)comp->rect.width);
-            orkface.boundingBox = CGRectMake((CGFloat)(comp->rect.width - comp->rect.x) / SCALE, (CGFloat)(comp->rect.y) / SCALE, (CGFloat)comp->rect.width  / SCALE, (CGFloat)comp->rect.height / SCALE);
+            orkface.boundingBox = CGRectMake((CGFloat)(CGImageGetWidth(cgImage) * SCALE - (CGFloat)comp->rect.x - (CGFloat)comp->rect.width) / SCALE, (CGFloat)(comp->rect.y) / SCALE, (CGFloat)comp->rect.width  / SCALE, (CGFloat)comp->rect.height / SCALE);
             [myFaces addObject:orkface];
         }
     
@@ -174,7 +173,7 @@ static inline ccv_dense_matrix_t *get_ccv_dense_matrix_t(CGImageRef image)
         
         self.detectedFaces = myFaces;
         
-//        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             if(self.detectedFaces.count == 0) {
                 [self.delegate faceDetectorDidNotFindFaces:self];
             } else {
@@ -183,12 +182,14 @@ static inline ccv_dense_matrix_t *get_ccv_dense_matrix_t(CGImageRef image)
                     [self.delegate faceDetector:self didFindFace:face];
                 }
             }
-//        });
-        isProcessing = NO;
+        });
+        processing--;
+        
+        CVPixelBufferRelease(pixelBuffer);
 //    });
     
 
-    
+
 }
 
 

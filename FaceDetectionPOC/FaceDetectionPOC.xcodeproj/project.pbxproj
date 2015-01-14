@@ -10,6 +10,24 @@
 		AC09F8ED1A5CF75F0095D8DE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09F8EC1A5CF75F0095D8DE /* libsqlite3.dylib */; };
 		AC447F4B1A5D08F2001CB23E /* libccv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC447F481A5D08E6001CB23E /* libccv.a */; };
 		AC447F4D1A5D0D78001CB23E /* face.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = AC447F4C1A5D0D78001CB23E /* face.sqlite3 */; };
+		AC4E048D1A5E625E00130DD5 /* ORKBBFFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4E048C1A5E625D00130DD5 /* ORKBBFFaceDetector.m */; };
+		AC4E04A51A5E63F200130DD5 /* cascade.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04941A5E63F200130DD5 /* cascade.txt */; };
+		AC4E04A61A5E63F200130DD5 /* stage-0.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04951A5E63F200130DD5 /* stage-0.txt */; };
+		AC4E04A71A5E63F200130DD5 /* stage-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04961A5E63F200130DD5 /* stage-1.txt */; };
+		AC4E04A81A5E63F200130DD5 /* stage-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04971A5E63F200130DD5 /* stage-2.txt */; };
+		AC4E04A91A5E63F200130DD5 /* stage-3.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04981A5E63F200130DD5 /* stage-3.txt */; };
+		AC4E04AA1A5E63F200130DD5 /* stage-4.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04991A5E63F200130DD5 /* stage-4.txt */; };
+		AC4E04AB1A5E63F200130DD5 /* stage-5.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E049A1A5E63F200130DD5 /* stage-5.txt */; };
+		AC4E04AC1A5E63F200130DD5 /* stage-6.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E049B1A5E63F200130DD5 /* stage-6.txt */; };
+		AC4E04AD1A5E63F200130DD5 /* stage-7.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E049C1A5E63F200130DD5 /* stage-7.txt */; };
+		AC4E04AE1A5E63F200130DD5 /* stage-8.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E049D1A5E63F200130DD5 /* stage-8.txt */; };
+		AC4E04AF1A5E63F200130DD5 /* stage-9.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E049E1A5E63F200130DD5 /* stage-9.txt */; };
+		AC4E04B01A5E63F200130DD5 /* stage-10.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E049F1A5E63F200130DD5 /* stage-10.txt */; };
+		AC4E04B11A5E63F200130DD5 /* stage-11.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04A01A5E63F200130DD5 /* stage-11.txt */; };
+		AC4E04B21A5E63F200130DD5 /* stage-12.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04A11A5E63F200130DD5 /* stage-12.txt */; };
+		AC4E04B31A5E63F200130DD5 /* stage-13.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04A21A5E63F200130DD5 /* stage-13.txt */; };
+		AC4E04B41A5E63F200130DD5 /* stage-14.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04A31A5E63F200130DD5 /* stage-14.txt */; };
+		AC4E04B51A5E63F200130DD5 /* stage-15.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4E04A41A5E63F200130DD5 /* stage-15.txt */; };
 		AC69442B1A5CFC8A00710381 /* ORKSCDFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = AC69442A1A5CFC8A00710381 /* ORKSCDFaceDetector.m */; };
 		AC9C91B81A5CD452000C4C5D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9C91B71A5CD452000C4C5D /* libc++.dylib */; };
 		ACB53ADD1A5873F7006C3FC7 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB53ADC1A5873F7006C3FC7 /* opencv2.framework */; };
@@ -32,6 +50,8 @@
 		ACBCC5A11A5C68550050BF2F /* FaceppTrainer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBCC5921A5C68550050BF2F /* FaceppTrainer.m */; };
 		ACBCC5A21A5C68550050BF2F /* FaceppError.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBCC5951A5C68550050BF2F /* FaceppError.m */; };
 		ACBCC5A31A5C68550050BF2F /* FaceppResult.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBCC5971A5C68550050BF2F /* FaceppResult.m */; };
+		ACC1914D1A65F63A00CC238F /* face-1000.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = ACC1914C1A65F63A00CC238F /* face-1000.sqlite3 */; };
+		ACC191531A6647BA00CC238F /* FrameRateCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC191521A6647BA00CC238F /* FrameRateCalculator.m */; };
 		D5DA8AB91A48B743005DDC4B /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8AB81A48B743005DDC4B /* main.mm */; };
 		D5DA8ABC1A48B743005DDC4B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8ABB1A48B743005DDC4B /* AppDelegate.mm */; };
 		D5DA8AC21A48B743005DDC4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DA8AC01A48B743005DDC4B /* Main.storyboard */; };
@@ -98,6 +118,25 @@
 		AC447F431A5D08E6001CB23E /* ccv.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ccv.xcodeproj; path = ccv/ccv.xcodeproj; sourceTree = "<group>"; };
 		AC447F4C1A5D0D78001CB23E /* face.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.sqlite3; sourceTree = "<group>"; };
 		AC4B522B1A5CEB7F00129D0C /* libccv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libccv.a; path = "../../../Library/Developer/Xcode/DerivedData/FaceDetectionPOC-gyaynpqeiylhzkbuypqqzdqeszpe/Build/Products/Debug-iphoneos/libccv.a"; sourceTree = "<group>"; };
+		AC4E048B1A5E625D00130DD5 /* ORKBBFFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORKBBFFaceDetector.h; sourceTree = "<group>"; };
+		AC4E048C1A5E625D00130DD5 /* ORKBBFFaceDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORKBBFFaceDetector.m; sourceTree = "<group>"; };
+		AC4E04941A5E63F200130DD5 /* cascade.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cascade.txt; sourceTree = "<group>"; };
+		AC4E04951A5E63F200130DD5 /* stage-0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-0.txt"; sourceTree = "<group>"; };
+		AC4E04961A5E63F200130DD5 /* stage-1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-1.txt"; sourceTree = "<group>"; };
+		AC4E04971A5E63F200130DD5 /* stage-2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-2.txt"; sourceTree = "<group>"; };
+		AC4E04981A5E63F200130DD5 /* stage-3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-3.txt"; sourceTree = "<group>"; };
+		AC4E04991A5E63F200130DD5 /* stage-4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-4.txt"; sourceTree = "<group>"; };
+		AC4E049A1A5E63F200130DD5 /* stage-5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-5.txt"; sourceTree = "<group>"; };
+		AC4E049B1A5E63F200130DD5 /* stage-6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-6.txt"; sourceTree = "<group>"; };
+		AC4E049C1A5E63F200130DD5 /* stage-7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-7.txt"; sourceTree = "<group>"; };
+		AC4E049D1A5E63F200130DD5 /* stage-8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-8.txt"; sourceTree = "<group>"; };
+		AC4E049E1A5E63F200130DD5 /* stage-9.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-9.txt"; sourceTree = "<group>"; };
+		AC4E049F1A5E63F200130DD5 /* stage-10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-10.txt"; sourceTree = "<group>"; };
+		AC4E04A01A5E63F200130DD5 /* stage-11.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-11.txt"; sourceTree = "<group>"; };
+		AC4E04A11A5E63F200130DD5 /* stage-12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-12.txt"; sourceTree = "<group>"; };
+		AC4E04A21A5E63F200130DD5 /* stage-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-13.txt"; sourceTree = "<group>"; };
+		AC4E04A31A5E63F200130DD5 /* stage-14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-14.txt"; sourceTree = "<group>"; };
+		AC4E04A41A5E63F200130DD5 /* stage-15.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stage-15.txt"; sourceTree = "<group>"; };
 		AC6944291A5CFC8A00710381 /* ORKSCDFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORKSCDFaceDetector.h; sourceTree = "<group>"; };
 		AC69442A1A5CFC8A00710381 /* ORKSCDFaceDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORKSCDFaceDetector.m; sourceTree = "<group>"; };
 		AC9C91B71A5CD452000C4C5D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -138,6 +177,9 @@
 		ACBCC5951A5C68550050BF2F /* FaceppError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceppError.m; sourceTree = "<group>"; };
 		ACBCC5961A5C68550050BF2F /* FaceppResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceppResult.h; sourceTree = "<group>"; };
 		ACBCC5971A5C68550050BF2F /* FaceppResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceppResult.m; sourceTree = "<group>"; };
+		ACC1914C1A65F63A00CC238F /* face-1000.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "face-1000.sqlite3"; sourceTree = "<group>"; };
+		ACC191511A6647BA00CC238F /* FrameRateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameRateCalculator.h; sourceTree = "<group>"; };
+		ACC191521A6647BA00CC238F /* FrameRateCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameRateCalculator.m; sourceTree = "<group>"; };
 		D5DA8AB31A48B742005DDC4B /* FaceDetectionPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DA8AB71A48B742005DDC4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DA8AB81A48B743005DDC4B /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -213,6 +255,48 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AC4E04911A5E63AB00130DD5 /* Model Samples */ = {
+			isa = PBXGroup;
+			children = (
+				AC4E04931A5E63CD00130DD5 /* BBF */,
+				AC4E04921A5E63BC00130DD5 /* SCD */,
+			);
+			name = "Model Samples";
+			sourceTree = "<group>";
+		};
+		AC4E04921A5E63BC00130DD5 /* SCD */ = {
+			isa = PBXGroup;
+			children = (
+				ACC1914C1A65F63A00CC238F /* face-1000.sqlite3 */,
+				AC447F4C1A5D0D78001CB23E /* face.sqlite3 */,
+			);
+			name = SCD;
+			sourceTree = "<group>";
+		};
+		AC4E04931A5E63CD00130DD5 /* BBF */ = {
+			isa = PBXGroup;
+			children = (
+				AC4E04941A5E63F200130DD5 /* cascade.txt */,
+				AC4E04951A5E63F200130DD5 /* stage-0.txt */,
+				AC4E04961A5E63F200130DD5 /* stage-1.txt */,
+				AC4E04971A5E63F200130DD5 /* stage-2.txt */,
+				AC4E04981A5E63F200130DD5 /* stage-3.txt */,
+				AC4E04991A5E63F200130DD5 /* stage-4.txt */,
+				AC4E049A1A5E63F200130DD5 /* stage-5.txt */,
+				AC4E049B1A5E63F200130DD5 /* stage-6.txt */,
+				AC4E049C1A5E63F200130DD5 /* stage-7.txt */,
+				AC4E049D1A5E63F200130DD5 /* stage-8.txt */,
+				AC4E049E1A5E63F200130DD5 /* stage-9.txt */,
+				AC4E049F1A5E63F200130DD5 /* stage-10.txt */,
+				AC4E04A01A5E63F200130DD5 /* stage-11.txt */,
+				AC4E04A11A5E63F200130DD5 /* stage-12.txt */,
+				AC4E04A21A5E63F200130DD5 /* stage-13.txt */,
+				AC4E04A31A5E63F200130DD5 /* stage-14.txt */,
+				AC4E04A41A5E63F200130DD5 /* stage-15.txt */,
+			);
+			name = BBF;
+			sourceTree = "<group>";
+		};
 		ACBCC5761A5C67230050BF2F /* FaceppLocalDetectorSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +358,7 @@
 		D5DA8AAA1A48B742005DDC4B = {
 			isa = PBXGroup;
 			children = (
-				AC447F4C1A5D0D78001CB23E /* face.sqlite3 */,
+				AC4E04911A5E63AB00130DD5 /* Model Samples */,
 				AC447F431A5D08E6001CB23E /* ccv.xcodeproj */,
 				D5DA8AB51A48B742005DDC4B /* FaceDetectionPOC */,
 				D5DA8D231A48B8AE005DDC4B /* Frameworks */,
@@ -302,6 +386,8 @@
 				D5DA8D2C1A48BE99005DDC4B /* GPUImage */,
 				D5DA8ABA1A48B743005DDC4B /* AppDelegate.h */,
 				D5DA8ABB1A48B743005DDC4B /* AppDelegate.mm */,
+				ACC191511A6647BA00CC238F /* FrameRateCalculator.h */,
+				ACC191521A6647BA00CC238F /* FrameRateCalculator.m */,
 				D5DA8ABD1A48B743005DDC4B /* ViewController.h */,
 				D5DA8D481A48D000005DDC4B /* ViewController.m */,
 				D5DA8D4C1A48D489005DDC4B /* Concrete Face Detectors */,
@@ -397,6 +483,8 @@
 				ACBCC5211A5C5B120050BF2F /* ORKFacePlusPlusFaceDetector.mm */,
 				AC6944291A5CFC8A00710381 /* ORKSCDFaceDetector.h */,
 				AC69442A1A5CFC8A00710381 /* ORKSCDFaceDetector.m */,
+				AC4E048B1A5E625D00130DD5 /* ORKBBFFaceDetector.h */,
+				AC4E048C1A5E625D00130DD5 /* ORKBBFFaceDetector.m */,
 			);
 			name = "Concrete Face Detectors";
 			sourceTree = "<group>";
@@ -516,12 +604,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4E04A81A5E63F200130DD5 /* stage-2.txt in Resources */,
 				D5DA8AC21A48B743005DDC4B /* Main.storyboard in Resources */,
+				AC4E04AE1A5E63F200130DD5 /* stage-8.txt in Resources */,
+				AC4E04B11A5E63F200130DD5 /* stage-11.txt in Resources */,
+				AC4E04B51A5E63F200130DD5 /* stage-15.txt in Resources */,
+				AC4E04A51A5E63F200130DD5 /* cascade.txt in Resources */,
+				AC4E04A61A5E63F200130DD5 /* stage-0.txt in Resources */,
+				AC4E04B21A5E63F200130DD5 /* stage-12.txt in Resources */,
+				AC4E04AF1A5E63F200130DD5 /* stage-9.txt in Resources */,
 				D5DA8AC71A48B743005DDC4B /* LaunchScreen.xib in Resources */,
 				ACB53AEE1A58F56E006C3FC7 /* haarcascade_frontalface_alt2.xml in Resources */,
+				AC4E04B41A5E63F200130DD5 /* stage-14.txt in Resources */,
 				D5DA8D4B1A48D296005DDC4B /* Readme.rtf in Resources */,
 				AC447F4D1A5D0D78001CB23E /* face.sqlite3 in Resources */,
+				AC4E04A71A5E63F200130DD5 /* stage-1.txt in Resources */,
+				AC4E04AB1A5E63F200130DD5 /* stage-5.txt in Resources */,
+				AC4E04AD1A5E63F200130DD5 /* stage-7.txt in Resources */,
+				ACC1914D1A65F63A00CC238F /* face-1000.sqlite3 in Resources */,
 				D5DA8AC41A48B743005DDC4B /* Images.xcassets in Resources */,
+				AC4E04B01A5E63F200130DD5 /* stage-10.txt in Resources */,
+				AC4E04B31A5E63F200130DD5 /* stage-13.txt in Resources */,
+				AC4E04AA1A5E63F200130DD5 /* stage-4.txt in Resources */,
+				AC4E04AC1A5E63F200130DD5 /* stage-6.txt in Resources */,
+				AC4E04A91A5E63F200130DD5 /* stage-3.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +658,7 @@
 				ACBCC59A1A5C68550050BF2F /* FaceppDetection.m in Sources */,
 				ACBCC59D1A5C68550050BF2F /* FaceppGrouping.m in Sources */,
 				ACBCC59E1A5C68550050BF2F /* FaceppInfo.m in Sources */,
+				ACC191531A6647BA00CC238F /* FrameRateCalculator.m in Sources */,
 				ACB53AE91A588F2C006C3FC7 /* UIImage+OpenCV.mm in Sources */,
 				ACBCC57B1A5C67230050BF2F /* FaceppDetection+LocalResultUploader.m in Sources */,
 				D5DA8D3F1A48C740005DDC4B /* ORKFaceDetectionTool.m in Sources */,
@@ -561,6 +668,7 @@
 				ACBCC5A11A5C68550050BF2F /* FaceppTrainer.m in Sources */,
 				ACBCC5991A5C68550050BF2F /* FaceppClient.m in Sources */,
 				ACBCC5A01A5C68550050BF2F /* FaceppRecognition.m in Sources */,
+				AC4E048D1A5E625E00130DD5 /* ORKBBFFaceDetector.m in Sources */,
 				D5DA8D491A48D000005DDC4B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
